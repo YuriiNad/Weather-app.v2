@@ -1,0 +1,11 @@
+<div class="nav-container">
+  <form class="nav-form">
+    <mat-form-field class="input-full-width" appearance="fill">
+      <mat-label>City name</mat-label>
+      <input matInput #cityName maxlength="25" placeholder="Lviv">
+      <mat-hint align="start"><strong>City name letters limit</strong> </mat-hint>
+      <mat-hint align="end">{{cityName.value.length}} / 25</mat-hint>
+    </mat-form-field>
+  </form>
+  <button mat-stroked-button color="primary" class="btn-submit" (click)="submit(cityName.value)">Find</button>
+</div>

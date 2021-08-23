@@ -1,0 +1,15 @@
+<div class="main-container">
+
+ <app-toolbar [isOpen]="sideNavOpen"></app-toolbar>
+
+ <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #sideNavOpen class="example-sidenav" mode="push">
+   <app-side-nav></app-side-nav>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+   <app-content-tabs></app-content-tabs>
+  </div>
+ </mat-drawer-container>
+
+</div> 
