@@ -6,7 +6,7 @@ import { UserCoordinates } from 'src/app/objects-types/user-coordinates';
 
 import { WeatherService } from 'src/app/services/weather.service';
 import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data.service';
-import { pipe } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 
 @Component({
   selector: 'app-side-nav',

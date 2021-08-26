@@ -21,7 +21,10 @@ export class WeatherDataComponent implements OnInit {
     this._sharing.userWeatherData
     .subscribe((data)=> {
       this.openWeatherData = data
-      this.isOpen = true
+
+      if (this.openWeatherData != null){
+        this.isOpen = true
+      }
     })
     return this.openWeatherData
   }

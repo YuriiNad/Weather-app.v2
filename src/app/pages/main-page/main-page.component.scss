@@ -1,21 +1,28 @@
 .main-container {
  width: 100%;
- height: 100vh;
+ min-height: 100%;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ flex: 1 1 100%;
  
- .example-container {
-  height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+ 
+ .wrap-content {
+  border: 1px solid rgba(9, 243, 114, 0.5);
+  min-height: 100%;
+  flex: 1 1 auto;
  }
  
  .sidenav-content {
-  width: 100%; // inherit
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  background-color: rgb(138, 121, 121);
+  border: 2px solid red;
  }
  
- .example-sidenav {
+ .wrap-sidenav {
   padding: 20px;
+ }
+ .footer {
+  height: 65xp;
+  width: 100%;
+  color: red;
  }
 }

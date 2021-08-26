@@ -1,23 +1,24 @@
-<mat-tab-group mat-align-tabs="start">
+<mat-tab-group mat-align-tabs="start" dynamicHeight animationDuration="1000ms">
  <mat-tab label="Data">
-  <div class="">
-   <h3>Data</h3>
+  <div class="wrap-container">
    <app-weather-data></app-weather-data>
   </div>
  </mat-tab>
 
  <mat-tab label="Map">
-  <div class="">
-   <h3>Location</h3>
+  <div class="wrap-container">
    <app-city-location></app-city-location>
   </div>
  </mat-tab>
 
  <mat-tab label="Both">
-  <div class="">
-   <h3>Content 3</h3>
-   <app-weather-data></app-weather-data>
-   <app-city-location></app-city-location>
+  <div class="wrap-data-map container-aligned-flex-row">
+   <div class="wrap-weather-data">
+    <app-weather-data></app-weather-data>
+   </div>
+   <div class="wrap-city-location">
+    <app-city-location></app-city-location>
+   </div>
   </div>
 
  </mat-tab>

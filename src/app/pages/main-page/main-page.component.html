@@ -2,8 +2,8 @@
 
  <app-toolbar [isOpen]="sideNavOpen"></app-toolbar>
 
- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #sideNavOpen class="example-sidenav" mode="push">
+ <mat-drawer-container class="wrap-content" autosize>
+  <mat-drawer #sideNavOpen class="wrap-sidenav" mode="push">
    <app-side-nav></app-side-nav>
   </mat-drawer>
 
@@ -11,5 +11,6 @@
    <app-content-tabs></app-content-tabs>
   </div>
  </mat-drawer-container>
-
+ 
+ <div class="footer">footer</div>
 </div>
