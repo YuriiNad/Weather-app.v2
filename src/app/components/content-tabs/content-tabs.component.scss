@@ -1,4 +1,4 @@
-.mat-tab-group {
+.mat-tab-group { // material
  margin-bottom: 48px;
 }
 
@@ -9,13 +9,10 @@
  .wrap-city-location, .wrap-weather-data {
   min-width: 320px;
   flex: 1 0 50%;
-  border: 2px solid green;
  }
 }
 
-@media screen and (max-width: 780px) {
- .wrap-data-map {
-  flex-direction: column;
- }
-}
+
+
+
 

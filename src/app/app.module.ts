@@ -15,6 +15,7 @@ import { WeatherDataComponent } from './components/weather-data/weather-data.com
 import { CityLocationComponent } from './components/city-location/city-location.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentTabsComponent } from './components/content-tabs/content-tabs.component';
+import { PercentagePipe } from './pipes/percentage.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContentTabsComponent } from './components/content-tabs/content-tabs.com
     SideNavComponent,
     WeatherDataComponent,
     CityLocationComponent,
-    ContentTabsComponent
+    ContentTabsComponent,
+    PercentagePipe
   ],
   imports: [
     HttpClientModule,

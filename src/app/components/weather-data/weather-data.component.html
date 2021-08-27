@@ -1,17 +1,15 @@
-<div *ngIf="isOpen">
- <!-- <p>Name: {{openWeatherData.name}}</p>
- <p>County: {{openWeatherData.country}}</p> -->
- <div class="weather-data">
-  <h3>City name: ffffffffffffff</h3>
-  <span>Country: index:</span>
-  <p>Temperature:</p>
-  <p>Feels-like:</p>
-  <p>Icon</p> 
-  <p>Description:</p>
-  <p>Prussure:</p>
-  <p>Humidity</p>
-  <p>Humidity</p>
-  <p>Humidity</p>
-  <p>Humidity</p>
+<div *ngIf="isOpen" class="weather-data container-aligned-flex-row ">
+
+ <div class="main-info container-aligned-flex-column">
+  <h1>{{openWeatherData.name}}</h1>
+  <img [src]="openWeatherData.icon" alt="weather.img">
+  <span>{{openWeatherData.country}}</span>
+  <p>Temperature: {{openWeatherData.temperature | number:'1.0-0'}} °C</p>
+ </div>
+ <div class="additional-info container-aligned-flex-column">
+  <p>Feels like: {{openWeatherData.feels_like| number:'1.0-0'}} °C</p>
+  <p>Description: {{openWeatherData.description}}.</p>
+  <p>Prussure: {{openWeatherData.pressure}} hPa</p>
+  <p>Humidity: {{openWeatherData.humidity |percentage}}</p>
  </div>
 </div>
