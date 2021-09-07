@@ -1,15 +1,15 @@
-<div *ngIf="isOpen" class="weather-data container-aligned-flex-row ">
+<div *ngIf="isOpen" class="wrap-data-container weather-data flex-dir-row">
 
- <div class="main-info container-aligned-flex-column">
-  <h1>{{openWeatherData.name}}</h1>
-  <img [src]="openWeatherData.icon" alt="weather.img">
-  <span>{{openWeatherData.country}}</span>
-  <p>Temperature: {{openWeatherData.temperature | number:'1.0-0'}} °C</p>
- </div>
- <div class="additional-info container-aligned-flex-column">
-  <p>Feels like: {{openWeatherData.feels_like| number:'1.0-0'}} °C</p>
-  <p>Description: {{openWeatherData.description}}.</p>
-  <p>Prussure: {{openWeatherData.pressure}} hPa</p>
-  <p>Humidity: {{openWeatherData.humidity |percentage}}</p>
- </div>
+    <div class="main-info flex-dir-col">
+        <h1>{{openWeatherData.name}}</h1>
+        <img [src]="openWeatherData.icon" alt="weather.img">
+        <span>{{openWeatherData.country}}</span>
+        <p>Temperature: {{openWeatherData.temperature | number:'1.0-0'}} °C</p>
+    </div>
+    <div class="additional-info flex-dir-col">
+        <p>Feels like: {{openWeatherData.feels_like| number:'1.0-0'}} °C</p>
+        <p>Description: {{openWeatherData.description}}.</p>
+        <p>Prussure: {{openWeatherData.pressure}} hPa</p>
+        <p>Humidity: {{openWeatherData.humidity |percentage}}</p>
+    </div>
 </div>

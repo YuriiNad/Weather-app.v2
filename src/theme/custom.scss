@@ -1,0 +1,67 @@
+@import "variables";
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		p {
+			text-align: center;
+		}
+	}
+	p,
+	span,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		letter-spacing: 1px !important;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 36px !important;
+}
+
+.font {
+	&-lg {
+		font-size: 26px;
+	}
+	&-md {
+		font-size: 20px;
+	}
+	&-sm {
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 0px) {
+	// * {
+	// 	color: brown;
+	// }
+}
+@media screen and (min-width: $screen-sm) {
+	// * {
+	// 	color: red;
+	// }
+}
+@media screen and (min-width: $screen-md) {
+	// * {
+	// 	color: orange;
+	// }
+}
+@media screen and (min-width: $screen-lg) {
+}
+@media screen and (min-width: $screen-xl) {
+}

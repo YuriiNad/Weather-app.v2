@@ -1,41 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
+@import "src/theme/custom.scss";
+@import "src/theme/variables.scss";
+@import "src/theme/angular-material.scss";
 
-html, body { height: 100%; }
-body { margin: 0;}
-
-*{
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- font-family: 'Baloo Tamma 2', cursive;
- p {
-  text-align: center;
- }
+.flex-dir-col {
+	display: flex;
+	flex-direction: column;
+}
+.flex-dir-row {
+	display: flex;
+	flex-direction: row;
 }
 
-.container-aligned-flex-column {
- display: flex;
- flex-direction: column;
+.wrap-data-container {
+	width: 100%;
+	flex-wrap: wrap;
+	height: auto;
+	justify-content: center;
+	align-items: stretch;
+	padding-top: 5px;
 }
-.container-aligned-flex-row {
- display: flex;
- flex-direction: row;
+.shadow-box {
+	box-shadow: 1px 1px 6px #ccc;
+	padding: 10px;
+	border-radius: 7px;
+	margin: 10px 10px;
+	padding: 5px 5px;
 }
 
-@media screen and (max-width: 1000px) {
- .wrap-data-map {
-  flex-direction: column;
-  .wrap-city-location, .wrap-weather-data {
-   flex: 1 0 50%;
-  }
- }
+@media screen and (max-width: $screen-sm) {
 }
-@media screen and (max-width: 770px){
- .weather-data {
-  flex-direction: column;
- }
- .additional-info>p, .main-info>p {
-  margin-top: 15px;
- }
+@media screen and (max-width: $screen-md) {
+}
+@media screen and (min-width: $screen-lg) {
+}
+@media screen and (max-width: $screen-xl) {
+	.city-location {
+		min-height: 437px;
+	}
 }

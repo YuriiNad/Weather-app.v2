@@ -1,18 +1,18 @@
-.mat-tab-group { // material
- margin-bottom: 48px;
+@import "src/theme/variables.scss";
+
+.wrap-data-container {
+	.wrap-city-location-both,
+	.wrap-weather-data-both {
+		justify-content: space-between;
+		align-items: center;
+		width: 50%;
+		margin: 5px 5px;
+		padding: 0 5px;
+		flex: 1 1 410px;
+	}
 }
 
-.wrap-data-map {
- flex-wrap: wrap;
- justify-content: space-between;
-
- .wrap-city-location, .wrap-weather-data {
-  min-width: 320px;
-  flex: 1 0 50%;
- }
+.wrap-city-location-both,
+.wrap-city-map {
+	min-height: 437px;
 }
-
-
-
-
-

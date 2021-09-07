@@ -1,29 +1,28 @@
 .main-container {
- width: 100%;
- min-height: 100%;
- overflow: hidden;
- display: flex;
- flex-direction: column;
- flex: 1 1 100%;
- 
- 
- .wrap-content {
-  border: 1px solid rgba(9, 243, 114, 0.5);
-  height: 100%;
-  flex: 1 1 auto;
- }
- 
- .sidenav-content {
-  // height: 85vh;
-  border: 2px solid red;
- }
- 
- .wrap-sidenav {
-  padding: 20px;
- }
- .footer {
-  height: 65xp;
-  width: 100%;
-  color: red;
- }
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100vh;
+
+    .wrap-content {
+        min-height: 100%;
+        flex: 1 1 auto;
+    }
+
+    .sidenav-content {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .wrap-sidenav {
+        padding: 20px;
+    }
+    .footer {
+        height: 65xp;
+        width: 100%;
+        color: red;
+        border: 2px solid green;
+    }
 }

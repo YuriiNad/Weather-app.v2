@@ -1,0 +1,21 @@
+.mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+	margin: 0 0 30px;
+	font-weight: 400;
+	font-size: 24px; // will change
+}
+
+.mat-h1,
+.mat-headline,
+.mat-typography h1 {
+	margin: 0 0 30px;
+}
+
+.mat-tab-group {
+	p,
+	h1,
+	span {
+		font-style: italic !important;
+	}
+}
