@@ -29,6 +29,25 @@
 }
 
 @media screen and (max-width: $screen-sm) {
+	.wrap-footer {
+		height: 90px !important;
+		flex-direction: column;
+		.social-medias-links {
+			margin-bottom: 10px;
+			.facebook-container, .linkedin-container, .github-container { // Media for this
+				margin: 0 5px !important;
+				padding: 0px !important;
+			}
+		}
+		.all-rights {
+			p {
+				margin: 5px !important;
+				padding: 0 !important;
+			}
+		}
+
+
+	}
 }
 @media screen and (max-width: $screen-md) {
 }

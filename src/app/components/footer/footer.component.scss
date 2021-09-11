@@ -1,0 +1,21 @@
+.wrap-footer{
+	height: 64px;
+	justify-content: space-around;
+	align-items: center;
+	background-color: coral;
+
+	.facebook-container, .linkedin-container, .github-container { // Media for this
+		margin: 0 20px;
+		padding: 5px;
+	}
+	.all-rights { // Media for this
+		justify-content: center;
+		align-items: center;
+		p {
+			font-size: 14px;
+			margin: 10px;
+			padding: 5px;
+		}
+	}
+
+}
