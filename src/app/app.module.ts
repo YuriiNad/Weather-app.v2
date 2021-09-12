@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { SocialMediaSharingComponent } from './components/toolbar/social-media-sharing/social-media-sharing/social-media-sharing.component';
+import { SocialMediaSharingComponent } from './components/footer/social-media-sharing/social-media-sharing.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { WeatherDataComponent } from './components/weather-data/weather-data.component';
 import { CityLocationComponent } from './components/city-location/city-location.component';
@@ -20,26 +20,26 @@ import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainPageComponent,
-    ToolbarComponent,
-    SocialMediaSharingComponent,
-    SideNavComponent,
-    WeatherDataComponent,
-    CityLocationComponent,
-    ContentTabsComponent,
-    PercentagePipe,
-    FooterComponent
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    AngularMaterialModule,
-    BrowserAnimationsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		MainPageComponent,
+		ToolbarComponent,
+		SocialMediaSharingComponent,
+		SideNavComponent,
+		WeatherDataComponent,
+		CityLocationComponent,
+		ContentTabsComponent,
+		PercentagePipe,
+		FooterComponent
+	],
+	imports: [
+		HttpClientModule,
+		BrowserModule,
+		AppRoutingModule,
+		AngularMaterialModule,
+		BrowserAnimationsModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

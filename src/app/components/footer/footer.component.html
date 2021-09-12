@@ -1,23 +1,7 @@
-<div class="wrap-footer flex-dir-row">
-	<div class="all-rights flex-dir-row">
-		<p>© Всі права захищені. {{currentYear}}.</p>
-	</div>
-	<div class="social-medias-links flex-dir-row">
-		<div class="facebook-container flex-dir-row">
-			<a href="" class="flex-dir-row" target="_blank">
-				<img src="assets/imgs/facebook.svg" alt="apple-download">
-			</a>
-		</div>
-		<div class="linkedin-container">
-			<a href="" class="flex-dir-row" target="_blank">
-				<img src="assets/imgs/linkedin.svg" alt="linkedin-download">
-			</a>
-		</div>
-		<div class="github-container">
-			<a href="" class="flex-dir-row" target="_blank">
-				<img src="assets/imgs/github.svg" alt="github-download">
-			</a>
-		</div>
-	</div>
-
+<div class="footer">
+	<mat-toolbar color="primary">
+		<span>© Всі права захищені. {{currentYear}}.</span>
+		<span class="footer-spacer"></span>
+		<app-social-media-sharing></app-social-media-sharing>
+	</mat-toolbar>
 </div>
