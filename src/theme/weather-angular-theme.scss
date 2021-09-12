@@ -1,0 +1,19 @@
+@use '~@angular/material' as mat;
+@include mat.core();
+
+
+$weather-primary: mat.define-palette(mat.$teal-palette, 500);
+$weather-accent: mat.define-palette(mat.$blue-gray-palette, 500);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$weather-warn: mat.define-palette(mat.$red-palette);
+
+$weather-theme: mat.define-light-theme((
+ color: (
+   primary: $weather-primary,
+   accent: $weather-accent,
+   warn: $weather-warn,
+ )
+));
+
+@include mat.all-component-themes($weather-theme);

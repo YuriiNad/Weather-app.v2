@@ -35,7 +35,7 @@
 		.social-medias-links {
 			margin-bottom: 10px;
 			.facebook-container, .linkedin-container, .github-container { // Media for this
-				margin: 0 5px !important;
+				margin: 0 20px !important;
 				padding: 0px !important;
 			}
 		}
@@ -52,6 +52,15 @@
 @media screen and (max-width: $screen-md) {
 }
 @media screen and (min-width: $screen-lg) {
+	.wrap-footer {
+		justify-content: space-between !important;
+		.social-medias-links {
+			margin-right: 3% !important;
+		}
+		.all-rights {
+			margin-left: 3% !important;
+		}
+	}
 }
 @media screen and (max-width: $screen-xl) {
 	.city-location {
