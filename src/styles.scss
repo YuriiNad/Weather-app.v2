@@ -23,48 +23,9 @@
 
 .shadow-box {
 	box-shadow: 1px 1px 6px #ccc;
-	padding: 10px;
 	border-radius: 7px;
-	margin: 10px 10px;
-	padding: 5px 5px;
+	margin: 5px 5px;
+	border: 2px solid red;
 }
 
-@media screen and (max-width: $screen-sm) {
-	.wrap-footer {
-		height: 90px !important;
-		flex-direction: column;
-		.social-medias-links {
-			margin-bottom: 10px;
-			.facebook-container, .linkedin-container, .github-container { // Media for this
-				margin: 0 20px !important;
-				padding: 0px !important;
-			}
-		}
-		.all-rights {
-			p {
-				margin: 5px !important;
-				padding: 0 !important;
-			}
-		}
 
-
-	}
-}
-@media screen and (max-width: $screen-md) {
-}
-@media screen and (min-width: $screen-lg) {
-	.wrap-footer {
-		justify-content: space-between !important;
-		.social-medias-links {
-			margin-right: 3% !important;
-		}
-		.all-rights {
-			margin-left: 3% !important;
-		}
-	}
-}
-@media screen and (max-width: $screen-xl) {
-	.city-location {
-		min-height: 437px;
-	}
-}

@@ -26,4 +26,49 @@
 		line-height: 30% !important;
 	}
 }
+@media screen and (max-width: $screen-сustom1) {
+	.footer {
+		.mat-toolbar {
+			justify-content: center;
+			.footer-rights, .footer-spacer {
+				display: none;
+			}
+		}
+	}
+	.social-media-icon {
+		margin: 0px 20px !important;
+	}
+}
+@media screen and (max-width: $screen-sm) {
+	.footer {
+		.mat-toolbar {
+			span {
+				font-size: 15px !important;
+			}
+		}
+	}
+
+	.mat-tab-group {
+		h1 {
+			font-size: 30px !important;
+		}
+		p {
+			font-size: 22px !important;
+		}
+	}
+}
+@media screen and (max-width: $screen-xl) {
+	.city-location {
+		min-height: 437px;
+	}
+}
+@media screen and (min-width: $screen-xl) {
+
+	.main-container {
+		
+		// max-width: 1200px;
+	}
+
+
+}
 

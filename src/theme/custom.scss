@@ -35,33 +35,4 @@ h1 {
 	font-size: 36px !important;
 }
 
-.font {
-	&-lg {
-		font-size: 26px;
-	}
-	&-md {
-		font-size: 20px;
-	}
-	&-sm {
-		font-size: 16px;
-	}
-}
-@media screen and (min-width: 0px) {
-	// * {
-	// 	color: brown;
-	// }
-}
-@media screen and (min-width: $screen-sm) {
-	// * {
-	// 	color: red;
-	// }
-}
-@media screen and (min-width: $screen-md) {
-	// * {
-	// 	color: orange;
-	// }
-}
-@media screen and (min-width: $screen-lg) {
-}
-@media screen and (min-width: $screen-xl) {
-};
+
