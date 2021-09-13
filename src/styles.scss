@@ -12,6 +12,14 @@
 	flex-direction: row;
 }
 
+.wrap-data-container {
+	width: 100%;
+	flex-wrap: wrap;
+	height: auto;
+	justify-content: center;
+	align-items: stretch;
+	padding-top: 5px;
+}
 
 .shadow-box {
 	box-shadow: 1px 1px 6px #ccc;
