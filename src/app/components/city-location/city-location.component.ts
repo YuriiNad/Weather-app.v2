@@ -35,9 +35,11 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 			.subscribe((data) => {
 				if (data != null && data != undefined) {
 
-					this.mapCreation(data.lat, data.lon) // creates current city map;
+					// this.mapCreation(data.lat, data.lon) // creates current city map;
 
 					this.isHidden = true;
+				} else {
+					// here shoud be WARNING WINDOW or "map isn't available in your region"
 				}
 			})
 	}
@@ -47,6 +49,7 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 
 		let loader = new Loader({
 			apiKey: this.weatherAPIkey,
+			language: 'en-AU'
 		});
 
 		loader.load().then(() => {
