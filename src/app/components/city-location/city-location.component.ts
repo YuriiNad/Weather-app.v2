@@ -10,64 +10,54 @@ import { mapStyle } from './map-style';
 	styleUrls: ['./city-location.component.scss']
 })
 export class CityLocationComponent implements OnInit, AfterViewInit {
-	public coordinates!: UserCoordinates;
+	private weatherAPIkey = 'AIzaSyCawDz-TKGdLqMk-N7zZKrZRJxpfZKU32k'
 	public isHidden = true;
 	public cityMap!: HTMLElement;
 	public cityMapSecond!: HTMLElement;
 
 	@ViewChild('cityMap') mapContainer!: ElementRef;
 
-	constructor(private _sharing: SharingWeatherDataService, private renderer: Renderer2) { }
+	constructor(private _sharing: SharingWeatherDataService) { }
 
 
 
 	ngOnInit(): void {
-		setTimeout(() => {
-			console.log(this.cityMap);
-
-			let loader = new Loader({
-				apiKey: 'AIzaSyCawDz-TKGdLqMk-N7zZKrZRJxpfZKU32k',
-			});
-
-			loader.load().then(() => {
-
-				const currentMap = new google.maps.Map(this.cityMap, {
-					center: { lat: 49.83, lng: 24.029 },
-					zoom: 9,
-					disableDefaultUI: true,
-					draggable: false,
-					styles: mapStyle,
-				} as google.maps.MapOptions)
-			})
-		}, 0)
-
-
+		this.getCoordinates();
 	}
 
 
 	ngAfterViewInit() {
 		this.cityMap = this.mapContainer.nativeElement;
-		console.log(this.cityMap);
 	}
 
-	// getCoordinates(): void {
-	// 	this._sharing.userWeatherData
-	// 		.subscribe((data) => {
-	// 			this.coordinates = data;
-	// 			if (this.coordinates != null) {
+	getCoordinates(): void {
+		this._sharing.userWeatherData
+			.subscribe((data) => {
+				if (data != null && data != undefined) {
 
-	// 				// re-assignment coordinates to the same variable
-	// 				this.coordinates = {
-	// 					lat: data.lat,
-	// 					lon: data.lon,
-	// 				}
-	// 				console.log(this.coordinates);
+					this.mapCreation(data.lat, data.lon) // creates current city map;
 
-	// 				this.isHidden = true;
-	// 			}
-	// 		})
-	// }
-	// mapCreation():void {
+					this.isHidden = true;
+				}
+			})
+	}
 
-	// }
+	mapCreation(coordLat: number | null, coordLon: number | null): void {
+		const location = { lat: coordLat, lng: coordLon };
+
+		let loader = new Loader({
+			apiKey: this.weatherAPIkey,
+		});
+
+		loader.load().then(() => {
+
+			const currentMap = new google.maps.Map(this.cityMap, {
+				center: location,
+				zoom: 9,
+				disableDefaultUI: true,
+				draggable: false,
+				styles: mapStyle,
+			} as google.maps.MapOptions)
+		})
+	}
 }
