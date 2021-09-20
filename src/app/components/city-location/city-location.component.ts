@@ -14,12 +14,9 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 
 	constructor(private _sharing: SharingWeatherDataService, private _map: MapService) { }
 
-
-
 	ngOnInit(): void {
 		this.getCoordinates();
 	}
-
 
 	ngAfterViewInit() {
 		this.cityMap = this.mapContainer.nativeElement;

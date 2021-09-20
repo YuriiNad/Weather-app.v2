@@ -1,62 +1,71 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map} from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { WeatherItem } from '../objects-types/weather';
+import { ErrorService } from './error.service';
 
 
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class WeatherService {
-  private openWeatherApiKey: string = '&appid=8c11b9f0aba5f87af6fee00297f1a0f2';
-  private openWeatherData!: WeatherItem;
+	private openWeatherApiKey: string = '&appid=8c11b9f0aba5f87af6fee00297f1a0f2';
+	private openWeatherData!: WeatherItem;
 
-  constructor(private _http: HttpClient) { }
+	constructor(private _http: HttpClient, private _error: ErrorService) { }
 
-  getWeatherData(cityName: string): Observable<object> {
-    return this._http.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}${this.openWeatherApiKey}&units=metric`)
-      .pipe(
-        map((data: any): WeatherItem => {
-          this.openWeatherData = {
-            name: data.name,
-            country: data.sys['country'],
-            temperature: data.main['temp'],
-            feels_like: data.main['feels_like'],
-            icon: `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`,
-            description: data.weather[0]['description'],
-            pressure: data.main['pressure'],
-            humidity: data.main['humidity'],
-            lat: data.coord['lat'],
-            lon: data.coord['lon'],
-          }
+	getWeatherData(cityName: string): Observable<object> {
+		return this._http.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}${this.openWeatherApiKey}&units=metric`)
+			.pipe(
+				catchError((error: any): any => {
+					const cityNameDescription = 'Input is empty, or incorrect city name! Please try again!'
+					this._error.notifyError(error.error['message']);
+					return
+				}),
+				map((data: any): WeatherItem => {
+					this.openWeatherData = {
+						name: data.name,
+						country: data.sys['country'],
+						temperature: data.main['temp'],
+						feels_like: data.main['feels_like'],
+						icon: `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`,
+						description: data.weather[0]['description'],
+						pressure: data.main['pressure'],
+						humidity: data.main['humidity'],
+						lat: data.coord['lat'],
+						lon: data.coord['lon'],
+					}
 
-          return this.openWeatherData
-        })
-      )
-  }
+					return this.openWeatherData
+				})
+			)
+	}
 
-  getDefaultWeatherData(lat: number, lon: number): Observable<object> {
-    return this._http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8c11b9f0aba5f87af6fee00297f1a0f2&units=metric`)
-      .pipe(
-        map((data: any): WeatherItem => {
-          this.openWeatherData = {
-            name: data.name,
-            country: data.sys['country'],
-            temperature: data.main['temp'],
-            feels_like: data.main['feels_like'],
-            icon: `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`,
-            description: data.weather[0]['description'],
-            pressure: data.main['pressure'],
-            humidity: data.main['humidity'],
-            lat: data.coord['lat'],
-            lon: data.coord['lon'],
-          }
-          return this.openWeatherData
-        })
-      )
-  }
+	getDefaultWeatherData(lat: number, lon: number): Observable<object> {
+		return this._http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8c11b9f0aba5f87af6fee00297f1a0f2&units=metric`)
+			.pipe(
+				catchError((error: any): any => {
+					return this._error.notifyError(error.error['message']);
+				}),
+				map((data: any): WeatherItem => {
+					this.openWeatherData = {
+						name: data.name,
+						country: data.sys['country'],
+						temperature: data.main['temp'],
+						feels_like: data.main['feels_like'],
+						icon: `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`,
+						description: data.weather[0]['description'],
+						pressure: data.main['pressure'],
+						humidity: data.main['humidity'],
+						lat: data.coord['lat'],
+						lon: data.coord['lon'],
+					}
+					return this.openWeatherData
+				})
+			)
+	}
 
 }
