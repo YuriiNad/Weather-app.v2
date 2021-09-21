@@ -7,11 +7,14 @@ import Swal from 'sweetalert2';
 export class ErrorService {
 
 	constructor() { }
-	notifyError(description: string, solveOption: string = "Please, try one more time!") {
+
+	errorHandler(error: any, advice?: string): void {
+
+		const errorMessage = error.message
 		Swal.fire({
 			icon: 'error',
-			title: description,
-			text: solveOption,
+			title: errorMessage,
+			text: advice,
 			allowOutsideClick: false,
 			confirmButtonColor: '#F27474',
 		})

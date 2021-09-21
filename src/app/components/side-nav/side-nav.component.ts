@@ -14,7 +14,7 @@ import { ErrorService } from 'src/app/services/error.service';
 	styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-	public openWeatherData!: object;
+	public openWeatherData!: any;
 
 	constructor(private _weather: WeatherService, private _geolocation$: GeolocationService, private _sharing: SharingWeatherDataService, private _error: ErrorService) { }
 
@@ -24,7 +24,6 @@ export class SideNavComponent implements OnInit {
 	};
 
 	getdefaultUserLocation() {
-
 		this._geolocation$
 			.pipe(
 				take(1),
@@ -38,10 +37,10 @@ export class SideNavComponent implements OnInit {
 				switchMap((data: UserCoordinates): any => {
 					return this._weather.getDefaultWeatherData(data.lat!, data.lon!)
 				}),
-				catchError((error: any,): any => {
-					const descriptionGeolocation = 'Please, allow your browser to use your geolocation.';
-					return this._error.notifyError(error.message, descriptionGeolocation);
-				}),
+				catchError((error: any): any => {
+					const geolocationAdvice = 'Allow your computer to use your geolocation, or type a city name in imput!'
+					this._error.errorHandler(error, geolocationAdvice)
+				})
 			)
 			.subscribe((position: any) => {
 				this.openWeatherData = position
@@ -58,7 +57,6 @@ export class SideNavComponent implements OnInit {
 			.subscribe((data) => {
 				this.openWeatherData = data
 				console.log(this.openWeatherData);
-
 				// pass data to "_sharing.servise"
 				this._sharing.setUserWeatherData(this.openWeatherData);
 			})

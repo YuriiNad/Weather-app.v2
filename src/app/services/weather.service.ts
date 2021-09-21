@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-
 import { WeatherItem } from '../objects-types/weather';
 import { ErrorService } from './error.service';
+import { catchError, map } from 'rxjs/operators';
 
 
 
@@ -21,9 +20,8 @@ export class WeatherService {
 		return this._http.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}${this.openWeatherApiKey}&units=metric`)
 			.pipe(
 				catchError((error: any): any => {
-					const cityNameDescription = 'Input is empty, or incorrect city name! Please try again!'
-					this._error.notifyError(error.error['message']);
-					return
+					const weatherAdvice = 'Input is empty, or incorrect city name!'
+					this._error.errorHandler(error.error, weatherAdvice)
 				}),
 				map((data: any): WeatherItem => {
 					this.openWeatherData = {
@@ -47,9 +45,6 @@ export class WeatherService {
 	getDefaultWeatherData(lat: number, lon: number): Observable<object> {
 		return this._http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8c11b9f0aba5f87af6fee00297f1a0f2&units=metric`)
 			.pipe(
-				catchError((error: any): any => {
-					return this._error.notifyError(error.error['message']);
-				}),
 				map((data: any): WeatherItem => {
 					this.openWeatherData = {
 						name: data.name,
