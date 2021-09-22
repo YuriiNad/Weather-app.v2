@@ -29,13 +29,14 @@
 
 // style of SVG icons
 .not-allowed {
-	height: 90vh;
+	height: 100vh;
 	justify-content: center;
 	align-items: center;
 
 	img {
 		width: 100px !important;
 		height: 100px !important;
+		margin-bottom: 30px !important;
 	}
 }
 
