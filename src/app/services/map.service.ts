@@ -10,7 +10,7 @@ export class MapService {
 	private weatherAPIkey = 'AIzaSyCawDz-TKGdLqMk-N7zZKrZRJxpfZKU32k'
 	constructor() { }
 
-	mapCreation(coordLat: number | null, coordLon: number | null, cityMap: HTMLElement): void {
+	mapCreation(coordLat: number, coordLon: number, cityMap: HTMLElement): void {
 		const location = { lat: coordLat, lng: coordLon };
 
 		let loader = new Loader({
@@ -22,11 +22,17 @@ export class MapService {
 
 			const currentMap = new google.maps.Map(cityMap, {
 				center: location,
-				zoom: 9,
+				zoom: 11,
 				disableDefaultUI: true,
 				draggable: false,
 				styles: mapStyle,
 			} as google.maps.MapOptions)
+
+			const marker = new google.maps.Marker({
+				position: location,
+			});
+
+			marker.setMap(currentMap);
 		})
 	}
 }
