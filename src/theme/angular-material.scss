@@ -63,11 +63,13 @@
 	}
 }
 @media screen and (min-width: $screen-xl) {
-
-//It can be used if you need to make specific borders for content
+	.city-location {
+		min-height: 437px;
+	}
+	//It can be used if you need to make specific borders for content
 	// .main-container {
-		// max-width: 1200px;
-		// margin: 0 auto;
+	// 	max-width: 1199px;
+	// 	margin: 0 auto;
 	// }
 }
 

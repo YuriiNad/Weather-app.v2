@@ -36,7 +36,7 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 				if (data != null && data != undefined) {
 					// if (data == 1) {
 					console.log(data);
-					// this._map.mapCreation(data.lat, data.lon, this.cityMap); // creates current city map;
+					this._map.mapCreation(data.lat, data.lon, this.cityMap); // creates current city map;
 					this.isAllowed = false;
 				}
 			})
