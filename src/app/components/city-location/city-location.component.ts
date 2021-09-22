@@ -10,7 +10,8 @@ import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data
 	styleUrls: ['./city-location.component.scss']
 })
 export class CityLocationComponent implements OnInit, AfterViewInit {
-	public isHidden = true;
+	public isAllowed = true;
+	// public isAvailable = true
 	public cityMap!: HTMLElement;
 
 	@ViewChild('cityMap') mapContainer!: ElementRef;
@@ -31,9 +32,13 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 				delay(1000)
 			)
 			.subscribe((data) => {
+
+
 				if (data != null && data != undefined) {
+					// if (data == 1) {
+					console.log(data);
 					// this._map.mapCreation(data.lat, data.lon, this.cityMap); // creates current city map;
-					this.isHidden = true;
+					this.isAllowed = false;
 				}
 			})
 	}
