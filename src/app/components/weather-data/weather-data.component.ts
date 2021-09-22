@@ -9,7 +9,7 @@ import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data
 })
 export class WeatherDataComponent implements OnInit {
 	public openWeatherData!: any;
-	public isOpen = false
+	public isAllowed = false
 
 	constructor(private _sharing: SharingWeatherDataService) { }
 
@@ -23,7 +23,7 @@ export class WeatherDataComponent implements OnInit {
 				this.openWeatherData = data
 
 				if (this.openWeatherData != null) {
-					this.isOpen = true
+					this.isAllowed = true
 				}
 			})
 		return this.openWeatherData

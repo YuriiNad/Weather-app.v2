@@ -11,7 +11,6 @@ import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data
 })
 export class CityLocationComponent implements OnInit, AfterViewInit {
 	public isAllowed = true;
-	// public isAvailable = true
 	public cityMap!: HTMLElement;
 
 	@ViewChild('cityMap') mapContainer!: ElementRef;

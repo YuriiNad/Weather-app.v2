@@ -25,7 +25,18 @@
 	box-shadow: 1px 1px 6px #ccc;
 	border-radius: 7px;
 	margin: 5px 5px;
-	border: 2px solid red;
+}
+
+// style of SVG icons
+.not-allowed {
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100px !important;
+		height: 100px !important;
+	}
 }
 
 

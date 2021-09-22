@@ -1,15 +1,20 @@
-<div *ngIf="isOpen" class="wrap-data-container weather-data flex-dir-row">
+<div *ngIf="isAllowed" class="wrap-data-container weather-data flex-dir-row">
 
-    <div class="main-info flex-dir-col">
-        <h1>{{openWeatherData.name}}</h1>
-        <img [src]="openWeatherData.icon" alt="weather.img">
-        <span>{{openWeatherData.country}}</span>
-        <p>Temperature: {{openWeatherData.temperature | number:'1.0-0'}} °C</p>
-    </div>
-    <div class="additional-info flex-dir-col">
-        <p>Feels like: {{openWeatherData.feels_like| number:'1.0-0'}} °C</p>
-        <p>Description: {{openWeatherData.description}}.</p>
-        <p>Prussure: {{openWeatherData.pressure}} hPa</p>
-        <p>Humidity: {{openWeatherData.humidity |percentage}}</p>
-    </div>
+	<div class="main-info flex-dir-col">
+		<h1>{{openWeatherData.name}}</h1>
+		<img [src]="openWeatherData.icon" alt="weather.img">
+		<span>{{openWeatherData.country}}</span>
+		<p>Temperature: {{openWeatherData.temperature | number:'1.0-0'}} °C</p>
+	</div>
+	<div class="additional-info flex-dir-col">
+		<p>Feels like: {{openWeatherData.feels_like| number:'1.0-0'}} °C</p>
+		<p>Description: {{openWeatherData.description}}.</p>
+		<p>Prussure: {{openWeatherData.pressure}} hPa</p>
+		<p>Humidity: {{openWeatherData.humidity |percentage}}</p>
+	</div>
+</div>
+<div class="not-allowed weather-not-allowed flex-dir-col" *ngIf="!isAllowed">
+	<img src="assets/imgs/weather-not-allowed.svg" alt="github-download">
+	<h1>Error</h1>
+	<p>Currently default weather forecast isn't allowed for you.</p>
 </div>
