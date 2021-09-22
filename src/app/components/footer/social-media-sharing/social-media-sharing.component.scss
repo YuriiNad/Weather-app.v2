@@ -1,6 +1,11 @@
 .social-media-sharing {
  align-items: center;
  justify-content: center;
+	a {
+		bottom: 20px;
+		display: inline-block;
+		border-radius: 50%;
+	}
 }
 
 // All media queries in "XXXXXXXXXXX.scss"
