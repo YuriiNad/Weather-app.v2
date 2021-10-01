@@ -13,6 +13,8 @@
 		<p>Humidity: {{openWeatherData.humidity |percentage}}</p>
 	</div>
 </div>
+
+<!-- Error block -->
 <div class="not-allowed weather-not-allowed flex-dir-col" *ngIf="!isAllowed">
 	<img src="assets/imgs/weather-not-allowed.svg" alt="github-download">
 	<h1>Error</h1>

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GeolocationService } from '@ng-web-apis/geolocation';
 import { catchError, map, switchMap, take } from 'rxjs/operators';
-import { WeatherItem } from 'src/app/objects-types/weather';
 import { UserCoordinates } from 'src/app/objects-types/user-coordinates';
 
 import { WeatherService } from 'src/app/services/weather.service';
 import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data.service';
-import { Observable, pipe } from 'rxjs';
 import { ErrorService } from 'src/app/services/error.service';
 @Component({
 	selector: 'app-side-nav',

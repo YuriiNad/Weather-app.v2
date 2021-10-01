@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { pipe } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { ErrorService } from 'src/app/services/error.service';
 import { MapService } from 'src/app/services/map.service';
 import { SharingWeatherDataService } from 'src/app/services/sharing-weather-data.service';
 @Component({
@@ -15,7 +13,7 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 
 	@ViewChild('cityMap') mapContainer!: ElementRef;
 
-	constructor(private _sharing: SharingWeatherDataService, private _map: MapService, private _error: ErrorService) { }
+	constructor(private _sharing: SharingWeatherDataService, private _map: MapService) { }
 
 	ngOnInit(): void {
 		this.getCoordinates();
@@ -32,9 +30,7 @@ export class CityLocationComponent implements OnInit, AfterViewInit {
 			)
 			.subscribe((data) => {
 
-
 				if (data != null && data != undefined) {
-					// if (data == 1) {
 					console.log(data);
 					this._map.mapCreation(data.lat, data.lon, this.cityMap); // creates current city map;
 					this.isAllowed = false;
